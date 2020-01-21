@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="js/jquery-1.10.1.min.js"></script>
+        <script>
+           $(function(){
+                /* $.ajax({
+                    type: 'get',
+                    url: 'json/head.json',
+                    success: function(result){
+                        
+                        var j = 0;
+                        for(var arr in result){
+                            str =``;
+                            for(var i = 0; i < result[arr].length; i++){
+                                str += `
+                                <img src="${result[arr][i].img}" alt="">
+                                <p>${result[arr][i].data}</p>
+                                <span>${result[arr][i].pay}</span>
+                                `
+                                $(`#div${j}`).html(str);
+                            }
+                            
+                            j++;
+                        }
+                        
+                        
+                    },
+                    error: function(msg){
+                        alert(msg);
+                    }
+
+                }); */
+
+                $.ajax({
+                    type: 'get',
+                    url: 'json/concent.json',
+                    success: function(result){
+                        var str = ``;
+                        for(var i = 0; i < result['data'].length; i++){
+                                str += `
+                                <img src="${result['data'][i].url}" alt="">
+                                <p>${result['data'][i].name}</p>
+                                <span>${result['data'][i].tname}</span>
+                                `
+                               
+                            }
+                            $(`#div1`).html(str);
+                    }
+                })
+           })
+        </script>
+    </head>
+    <body>
+        <div id="div0"></div>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+        <div id="div5"></div>
+    </body>
+</html>

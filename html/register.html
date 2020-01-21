@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="http://cn.changhong.com/favicon.ico">
+        <title>注册</title>
+        <link rel="stylesheet" href="../css/register.min.css">
+        <script src="../js/require.js" async='true' defer data-main="../js/mainRegister"></script>
+    </head>
+    <body>
+        <!-- 头部 -->
+        <div class="header">
+            <a href="../index.html">
+                <img src="../images/login/logo.jpg" alt="">
+            </a>
+            <div class="header-center"></div>
+            <div class="header-right">欢迎注册</div>
+            <div class="register-right">
+                <span>已有账号？</span>
+                <span class="right-login" id="login">请登录</span>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="content">
+            <div class="stepTop">
+                <div id="headerStep1Div" class="heightlightDivColor">
+                    <img src="../images/login/register_ico_1_focus.png"><span class="numberSpan">1</span><span>验证手机</span>
+                </div>
+                <div id="headerStep2Div" class="normalDivColor">
+                    <img src="../images/login/register_ico_2_normal.png"><span class="numberSpan">2</span><span>设置密码</span>
+                </div>
+                <div id="headerStep3Div" class="normalDivColor">
+                    <img src="../images/login/register_ico_3_normal.png" alt=""><span class="numberSpan">3</span><span>注册成功</span>
+                </div>
+            </div>
+            <div class="contentDiv">
+                <form action="" class="stepDiv show" autocomplete="off" id="cd1">
+                    <div class="inputTopDiv">
+                        <input type="text" class="loginInput" placeholder="请输入手机号码" id="phone">
+                    </div>
+                    <div id="phoneCode"></div>
+                    <div class="inputTopDiv">
+                        <input type="text" class="loginInput verifiCodeInput" placeholder="短信验证码" id="code">
+                        <button class="getVerifiCodeBtn" id="btn2">获取验证码</button>
+                    </div>
+                    <div id="abcCode"></div>
+                    <div class="stepBtnTopDiv">
+                        <button class="stepBtn" id="btn1">下一步</button>
+                    </div>
+                    <div class="checkDiv">
+                        <img id="checkId" src="../images/login/ok.png" alt=""> <span>我已阅读并接受</span> <span class="span">&nbsp;版权声明、</span><span class="span">隐私保护&nbsp;</span> <span>条款</span>
+                    </div>
+                </form>
+                <form action="" class="stepDiv" id="cd2">
+                    <div class="inputTopDiv">
+                        <input class="loginInput" placeholder="请输入密码" type="password" maxlength="16" id="password">
+                    </div>
+                    <div id="ps"></div>
+                    <div class="inputTopDiv">
+                        <input class="loginInput" placeholder="请输入确认密码" type="password" maxlength="16" id="rePassword">
+                    </div>
+                    <div id=reps></div>
+                    <div class="ps">
+                        <span>密码长度8~16位，数字、字母、字符至少包含两种</span>
+                    </div>
+                    <div class="stepBtnTopDiv">
+                        <button class="stepBtn" id="btn3">提交</button>
+                    </div>
+                </form>
+                <form action="" class="stepDiv stepDiv3">
+                    <img src="../images/login/successful.png" alt="">
+                        <span class="pass">通行证注册已成功！</span> <span class="conect">如浏览器没有自动跳转，</span>
+                    <span class="hand" id="assign">请手动点击！</span>
+                </form>
+            </div>  
+        </div>
+    </body>
+</html>

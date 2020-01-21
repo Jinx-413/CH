@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="http://cn.changhong.com/favicon.ico">
+        <title>登录</title>
+        <script src="../js/require.js" async="true" defer data-main="../js/mainLogin"></script>
+        <link rel="stylesheet" href="../css/login.min.css">
+        
+    </head>
+    <body>
+        <!-- 头部 -->
+        <div class="header">
+            <a href="../index.html">
+                <img src="../images/login/logo.jpg" alt="">
+            </a>
+            <div class="header-center"></div>
+            <div class="header-right">通行证</div>
+        </div>
+
+        <!-- content -->
+        <div class="content">
+            <div class="content-header">
+                <div class="cheader" id="cheader-l">账号密码登录</div>
+                <div class="cheader gray" id="cheader-r">手机短信登录</div>
+            </div>
+            <form action="" class="user show" id="user" autocomplete="off">
+                <div class="inputTopdiv">
+                    <img src="../images/login/login_ico3.png" alt="">
+                    <input type="text" placeholder="手机/邮箱/用户名" id="phone1">
+                </div>
+                <div id="accountTipsDiv1" class="tipsDiv"></div>
+                <div class="inputTopdiv">
+                    <img src="../images/login/login_ico4.png" alt="">
+                    <input type="password" placeholder="密码" id="password">  
+                </div>
+                <div id="accountTipsDiv2" class="tipsDiv"></div>
+                <div class="loginBtnTopDiv">
+                    <button class="loginButton" id="login1">登录</button>
+                </div>
+            </form>
+            <form action="" class="user" id="show" autocomplete="off">
+                <div class="inputTopdiv">
+                    <img src="../images/login/login_ico1.png" alt="">
+                    <input type="text" placeholder="手机号码" id="p1">
+                </div>
+                <div id="accountTipsDiv3" class="tipsDiv"></div>
+                <div class="inputTopdiv">
+                    <img src="../images/login/login_ico2.png" alt="">
+                    <input type="text" placeholder="短信验证码" class="phoneInput" id="p2">
+                    <button class="phoneBtn" id="btn2">获取验证码</button> 
+                </div>
+                <div id="accountTipsDiv4" class="tipsDiv"></div>
+                <div class="loginBtnTopDiv">
+                    <button class="loginButton" id="login2">登录</button>
+                </div>
+            </form>
+            <div class="register">
+                <button class="repasBtn">忘记密码</button>
+                <button class="registerBtn" id="register">注册</button>
+            </div>
+            <div class="otherLoginTopDiv">
+                <div class="leftSpaceLineDiv"></div>
+                <div class="otherLoginDescriptDiv">其他登录方式</div>
+                <div class="rightSpaceLineDiv"></div>
+            </div>
+            <div class="otherLoginMethodDiv">
+				<a target="_top" href="https://graph.qq.com/oauth2.0/authorize?response_type=code&amp;client_id=101347331&amp;redirect_uri=https%3a%2f%2fpassport.changhong.com%2fredirect.do%3fenvironment%3dproduct%26livemode%3d1%26service%3dhttp://cn.changhong.com/%26source%3dqq">
+					<img src="../images/login/QQ.png" alt="">
+				</a> <a target="_top" href="https://open.weixin.qq.com/connect/qrconnect?appid=wxb21ab427f39e3633&amp;redirect_uri=https://passport.changhong.com/redirect.do?environment=product%26livemode=1%26service=http://cn.changhong.com/%26source%3dweChat&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect">
+					<img src="../images/login/weixin.png" alt="">
+				</a> <a target="_top" href="https://api.weibo.com/oauth2/authorize?client_id=3311627057&amp;redirect_uri=https://passport.changhong.com/redirect.do?environment=product%26livemode=1%26service=http://cn.changhong.com/%26source=weibo&amp;response_type=code&amp;state=&amp;scope=all">
+					<img src="../images/login/weibo.png" alt="">
+				</a> <a target="_top" href="https://auth.alipay.com/login/index.htm?goto=https%3A%2F%2Fopenauth.alipay.com%3A443%2Foauth2%2FpublicAppAuthorize.htm%3Fapp_id%3D2017102409491491%26scope%3Dauth_user,auth_base%26redirect_uri%3Dhttps%3a%2f%2fpassport.changhong.com%2fredirect.do%3fenvironment%3dproduct%26livemode%3d1%26service=http://cn.changhong.com/">
+					<img src="../images/login/pay.png" alt="">
+				</a>
+			</div>
+        </divc>
+    </body>
+</html>
