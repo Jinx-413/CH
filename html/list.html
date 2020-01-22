@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>长虹官网—让想象发生</title>
+        <link rel="shortcut icon" href="http://cn.changhong.com/favicon.ico">
+        <link rel="stylesheet" href="../css/list.css">
+        <script src="../js/require.js" async="true" defer data-main="../js/mainList"></script>
+    </head>
+    <body>
+        <!-- 头部 -->
+        <div class="header">
+            <div class="header-container">
+                <div class="header-left">
+                    <ul>
+                        <li><a href="" class="cur">长虹官网</a></li>
+                        <li><a href="">关于长虹</a></li>
+                        <li><a href="">商务合作</a></li>
+                        <li><a href="">
+                            <img src="http://images.changhong.com/chgw/images/en_icon.png">
+                            &nbsp;&nbsp;English
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="header-right">
+                    <div class="header-login">
+                        <a href="html/login.html">登录</a>
+                        <span>|</span>
+                        <a href="">注册</a>
+                    </div>
+                    <div class="header-motool">
+                        <div class="motool-tool">
+                            <div class="motool-tool-row">
+                                <a href="" class="tool-min">我的长虹</a>
+                            </div>
+                            <div class="tool-myCQ-tips">
+                                <div class="tool-myCQ-infor">
+                                    <img src="http://cn.changhong.com/images/tool-myCQ-my-photo_03.jpg" alt="" width="60" height="60" id="user_image">
+                                    <p class="tool-myCQ-infor-phone">您好请登录</a></p>
+                                    <p class="tool-myCQ-infor-setting"><a href="">账户设置</a></p>
+                                </div>
+                                <div class="tool-myCQ-operation">
+                                    <a href="">我的订单</a>
+                                    <span>|</span>
+                                    <a href="">我的预约</a>
+                                    <div class="tool-myCQ-operation-cut"></div>
+                                    <a href="">家电管家</a>
+                                    <span>|</span>
+                                    <a href="">服务记录</a>
+                                    <div class="tool-myCQ-operation-cut"></div>
+                                    <a href="">我的收藏</a>
+                                    <span>|</span>     
+                                    <div class="tool-myCQ-operation-cut"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="motool-tool">
+                            <div class="motool-tool-row">
+                                <a href="" class="tool-new">虹创有品</a>
+                                <img class="hcyp-ewm-img" src="http://images.changhong.com/chgw/images/cnhome-hcyp-ewm.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="motool-tool">
+                            <div class="motool-tool-row">
+                                <a href="" class="tool-gw">购物车</a>
+                            </div>
+                            <div class="tool-container-tips">
+                                <div class="tool-container-tips-warp">
+                                </div>
+                                <div class="tool-goods-pay">
+                                    <div class="tool-car-infor">
+                                        <p><span id="totalNum">0</span>件商品</p>
+                                        <h1>总价：<span id="totalPrice"></span></h1>
+                                    </div>
+                                    <a href="" class="goods-pay-btn" id="goods-pay-btn">立即结算</a>
+                                </div>
+                                <h1 class="tips-nogoods">购物车中还没有商品，赶紧选购吧</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 导航 -->
+        <div class="nav">
+            <div class="com-width clearfix header-nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="http://cn.changhong.com/gwsy/images/P020161125568572860644.png" alt="">
+                    </a>
+                </div>
+                <div class="home-nav" id="home-nav">
+                    <div class="home-inner-edit" id="edit">
+                        <a href="#"></a>
+                    </div>
+                    <ul>
+                        <li class="cur">
+                            <div class="home-nav-menu1" id="n0">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="home-nav-menu" id="n1">
+                            </div>
+                            <div class="home-nav-sub" style="display: none;">
+                                <div class="com-width">
+                                    <p class="home-sub-title">
+                                    <a href="javascript:void(0);" style="cursor:default;">热门推荐</a>
+                                    </p>
+                                <div class="home-nav-sub-cont" id="div0">
+                                                            
+                                </div>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="home-nav-menu" id="n2">
+                            </div>
+                            <div class="home-nav-sub" style="display: none;">
+                                <div class="com-width">
+                                    <p class="home-sub-title">
+                                    <a href="#" style="cursor:default;">热门推荐</a>
+                                    </p> 
+                                <div class="home-nav-sub-cont" id="div1">
+        
+                                </div>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="home-nav-menu" id="n3">
+                            </div>
+                            <div class="home-nav-sub" style="display: none;">
+                                <div class="com-width">
+                                    <p class="home-sub-title">
+                                    <a href="#" style="cursor:default;">热门推荐</a>
+                                    </p> 
+                                <div class="home-nav-sub-cont" id="div2">
+        
+                                </div>
+                            </div>
+                            </div>                        </li>
+                        <li>
+                            <div class="home-nav-menu" id="n4">
+                            </div>
+                            <div class="home-nav-sub" style="display: none;">
+                                <div class="com-width">
+                                    <p class="home-sub-title">
+                                    <a href="#" style="cursor:default;">热门推荐</a>
+                                    </p> 
+                                <div class="home-nav-sub-cont" id="div3">
+        
+                                </div>
+                            </div>
+                            </div>                        </li>
+                        <li>
+                            <div class="home-nav-menu" id="n5">
+                            </div>
+                            <div class="home-nav-sub" style="display: none;">
+                                <div class="com-width">
+                                    <p class="home-sub-title">
+                                    <a href="#" style="cursor:default;">热门推荐</a>
+                                    </p> 
+                                <div class="home-nav-sub-cont" id="div4">
+        
+                                </div>
+                            </div>
+                            </div>                        </li>
+                        <li>
+                            <div class="home-nav-menu" id="n6">
+                            </div class="home-nav-menu">
+                            <div class="home-nav-sub" style="display: none;">
+                                <div class="com-width">
+                                    <p class="home-sub-title">
+                                    <a href="#" style="cursor:default;">热门推荐</a>
+                                    </p> 
+                                <div class="home-nav-sub-cont" id="div5">
+        
+                                </div>
+                            </div>
+                            </div>                        </li>
+                    </ul>
+                </div>
+                <div class="home-search">
+                    <input type="text" id="searchInput" class="home-search-key" placeholder="Q6R">
+                    <input type="button" class="home-search-btn">
+                    <div id="orignSearchList">
+                    </div>
+              </div>
+            </div>
+        </div>
+        <div class="home-nav-inner home-nav-inner-show home-nav-inner-index" id="navT">
+            <ul>
+                
+                <!--chiq-->
+                
+                    <li>
+                        <div class="home-inner-menu home-inner-chiq" id="nT0">
+                                <!--启客系列-->
+                            </div>
+                            <div class="home-inner-secd" id="nav0">
+                           
+                            </div>
+                        </li>
+                    
+                    <!--chiq-->
+                    <!--平板电视-->
+                    
+                        <li>
+                            <div class="home-inner-menu home-inner-TV" id="nT1">
+                                <!--<a href='http://cn.changhong.com/cpzx/pb_televisions/search.html'  target="_blank"  >平板电视</a><span></span>-->
+                            </div>
+                            <div class="home-inner-secd" id="nav1">
+                           
+                            </div>
+                        </li>
+                    
+                    <!--平板电视-->
+                    <!--家用空调-->
+                    
+                        <li>
+                            <div class="home-inner-menu home-inner-air" id="nT2">
+                                <!--<a href="./cpzx/jy_aircondition/" target="_blank">空调产品</a>-->
+                            </div>
+                            <div class="home-inner-secd" id="nav2">
+                            </div>
+                        </li>
+                    
+                    <!--家用空调-->
+                    <!--冰洗-->
+                    
+                        <li>
+                            <div class="home-inner-menu home-inner-icebox" id="nT3">
+                                <!--<a href="./cpzx/bx/" target="_blank">冰洗产品</a> href='http://cn.changhong.com/cpzx/bx/search.html?bxlx=qtbx'-->
+                            </div>
+                            <div class="home-inner-secd" id="nav3">
+                            
+                </div>
+            </li>
+        
+        <!--冰洗-->
+        <!--生活电器-->
+        
+            <li>
+                <div class="home-inner-menu home-inner-ele" id="nT4">
+                    <!--生活家电-->
+                </div>
+                <div class="home-inner-secd" id="nav4">
+                
+                </div>
+            </li>
+        
+        <!--生活电器-->
+        <!--数码影音-->
+        
+            <li>
+                <div class="home-inner-menu home-inner-digital" id="nT5">
+                </div>
+                <div class="home-inner-secd" id="nav5">
+                 
+                </div>
+            </li>
+        
+        <!--数码影音-->
+        <!--周边其他--><!--照明-->
+        
+            <li>
+                <div class="home-inner-menu home-inner-other" id="nT6">
+                </div>
+                <div class="home-inner-secd" id="nav6">
+
+                </div>
+            </li>
+        
+        <!--周边其他-->
+        
+        </ul>
+    </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="com-width">
+                <div class="footer-help">
+                    <div class="help-about">
+                        <div class="about-CQ lf">
+                            <div class="about-icon" style="margin-top: 7px">
+                                <img alt="" width="55" height="37" src="../images/footer/describe-1.png" onerror="this.src='images/header01.png'">
+                            </div>
+                            <div class="about-describe">
+                                <h1 style="font-weight:bold">物流快线</h1>
+                                <p>及时响应准确送达</p>
+                            </div>
+                        </div>
+                        <div class="about-CQ rt">
+                            <div class="about-icon" style="margin-top: 7px">
+                                <img alt="" width="45" height="38" src="../images/footer/describe-2.png">
+                            </div>
+                            <div class="about-describe">
+                                <h1 style="font-weight:bold">无忧报修</h1>
+                                <p>7*24小时客服热线</p>
+                            </div>
+                        </div>
+                        <div class="about-CQ about-CQ-center">
+                            <div class="about-icon" style="margin-top: 7px">
+                                <img alt="" width="46" height="41" src="../images/footer/describe-3.png">
+                            </div>
+                            <div class="about-describe">
+                                <h1 style="font-weight:bold">售后网点</h1>
+                                <p>20000余家售后网点</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="help-ways">
+                        <div class="help-server lf">
+                            <ul class="lf ml40">
+                                <li class="help-title">友情链接</li>
+                                
+                                    <li><a href="http://www.meiling.com/" target="_blank">MELING美菱</a></li>
+                                
+                                    <li><a href="http://www.zkmeiling.com/" target="_blank">中科美菱</a></li>
+                                
+                                    <li><a href="http://www.changhongtech.com/" target="_blank">日电科技</a></li>
+                                
+                                    <li><a href="http://mobile.changhong.com/" target="_blank">长虹手机</a></li>
+                                
+                            </ul>
+                            <ul class="lf ml40">
+                                <li class="help-title">友情链接</li>
+                                
+                                    <li><a href="http://www.bangjiashi.com/" target="_blank">家事帮</a></li>
+                                
+                                    <li><a href="http://tv.qq.com" target="_blank">腾讯视频•TV端</a></li>
+                                
+                                    <li><a href="http://cn.changhong.com/activity/xrzm.html" target="_blank">虹创有品</a></li>
+                                
+                                    <li><a href="http://cn.changhong.com/activity/chelectric.html" target="_blank">长虹电子</a></li>
+                                
+                            </ul>
+                            <ul class="rt">
+                                <li class="help-title">服务支持</li>
+                                
+                                    <li><a href="http://cn.changhong.com/fw/" target="_blank">产品查询</a></li>
+                                
+                                    <li><a href="http://cn.changhong.com/fw/cpbxfw/support.html" target="_blank">维修服务</a></li>
+                                
+                                    <li><a href="http://cn.changhong.com/fw/ybfw/support.html" target="_blank">延保服务</a></li>
+                                
+                                    <li><a href="http://cn.changhong.com/fw/gdfw/xzzx/" target="_blank">下载中心</a></li>
+                                
+                            </ul>
+                        </div>
+                        <div class="help-team help-server lf">
+                            <ul class="lf">
+                                <li class="help-title">长虹集团</li>
+                                
+                                    <li><a href="http://group.changhong.com/xwzx_255/gsdt/" target="_blank">公司动态</a></li>
+                                
+                                    <li><a href="http://group.changhong.com/tzzgx_275/" target="_blank">投资者关系</a></li>
+                                
+                            </ul>
+                            <ul class="rt">
+                                <li class="help-title">商务合作</li>
+                                
+                                    <li><a href="http://b2b.changhong.com/" target="_blank">经销商登录</a></li>
+                                
+                                    <li><a href="http://srm.changhong.com/srm/login/index.do" target="_blank">供应商登录</a></li>
+                                
+                                    <li><a href="http://jsfw.kydls.com" target="_blank">服务商登录</a></li>
+                                
+                            </ul>
+                            <div class="clearfix"></div>
+                            <div class="foot-shopping">
+                                <p class="lf" style="display:none"><a href="https://jf.changhong.com" target="_blank">积分商城</a></p>
+                                <p class="rt"><a href="http://cn.changhong.com/fw/gdfw/gwzn/" target="_blank">购物指南</a></p>
+                            </div>
+                        </div>
+                        <div class="help-tel lf">
+                            <p class="airlines"><a style="cursor: pointer; color:#f12020;" href="" id="online-ask-item_1">在线客服</a></p>
+                            <p class="feedback"><a href="http://cn.changhong.com/gwsy/dblj/wtfk/" target="_blank" style="color:#f12020">问题反馈</a></p>
+                            <h1 style="margin-top:26px;">4008-111-666</h1>
+                            <h1>4006-111-666</h1>
+                        </div>
+                        <div class="help-code">
+                            
+                                
+                                    <div class="help-code-box lf">
+                                        <img alt="官方特卖" width="108" height="108" src="../images/footer/l.jpg">
+                                        <p>官方特卖</p>
+                                    </div>
+                                
+                                
+                                    <div class="help-code-box rt">
+                                        <img alt="长虹服务" width="108" height="108" src="../images/footer/r.jpg">
+                                        <p>长虹服务</p>
+                                    </div>
+                                
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="foot-statement clearfix">
+                <div class="com-width com-d">
+                    <div class="foot-logo">
+                        <img alt="" width="227" height="36" src="../images/footer/footer-logo.png">
+                    </div>
+                    <div class="foot-txt">
+                        <!--<p>北京市公安局朝阳分局备案编号110105014669  |  京ICP证070359号  |  互联网药品信息服务资格证编号(京)-经营性-2014-0008  |  新出发京零 字第大120007号</p>
+                        <p>音像制品经营许可证苏宿批005号  |  出版物经营许可证编号新出发(苏)批字第N-012号  |  互联网出版许可证编号新出网证(京)字150号</p>
+                        <p>网络文化经营许可证京网文[2014]2148-348号  违法和不良信息举报电话：4006561155-->
+                        <p><a style="color:#999" href="http://www.beian.miit.gov.cn">蜀ICP备09001737号-1</a> | © 2020 四川长虹电器股份有限公司 版权所有</p>
+                        <p>地址：四川省绵阳市高新区绵兴东路35号</p>
+                    </div>
+                    <div class="foot-note">
+                        <p style="margin-left: 144px"><img alt="" width="26" height="31" src="../images/footer/wzba-icon1.png">经营性网站备案信息</p>
+                        <p style="margin-left: 106px"><img alt="" width="24" height="20" src="../images/footer/2.png">诚信网站</p>
+                        <p style="margin-left: 104px"><a href="http://182.131.3.112/iciaicweb/dzbscheck.do?method=change&amp;id=40a3809a5f5cb2b10160545854e303f3" target="_blank"><img src="../images/footer/3.gif" alt="" width="20" height="20">工商网监</a></p>
+                        <p style="margin-left: 104px"><img alt="" width="18" height="20" src="../images/footer/4.png">网上交易保障中心</p>
+                        <p style="margin-left: 95px"><img alt="" width="20" height="20" src="../images/footer/5.png">可信网站信用评估</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 左侧选项卡 -->
+        <div class="xhome-fixl">
+            <ul id="xhome-fixl">
+                <li class=""><a href="">热门</a></li>
+                <li class=""><a href="">电视</a></li>
+                <li class=""><a href="">空调</a></li>
+                <li class=""><a href="">冰洗</a></li>
+                <li class=""><a href="">生活</a></li>
+                <li class=""><a href="">周边</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
