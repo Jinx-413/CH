@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>长虹官网—让想象发生</title>
         <link rel="shortcut icon" href="http://cn.changhong.com/favicon.ico">
-        <link rel="stylesheet" href="../css/list.css">
+        <link rel="stylesheet" href="../css/list.min.css">
         <script src="../js/require.js" async="true" defer data-main="../js/mainList"></script>
     </head>
     <body>
@@ -408,7 +408,7 @@
                 <!--</div>-->
                 <!--</div>-->
                 <!--  产品中心新增 其他功能选项-->
-                <div class="pro-selector-new-row clearfix" id="tsgndiv" style="height: 100px;">
+                <div class="pro-selector-row clearfix" id="tsgndiv" style="height: 100px;">
                     <div class="pro-selector-left">
                         <p class="pro-selector-label">
                             其他功能：
@@ -490,8 +490,8 @@
                
     <div class="pro-his-tj">
                     <div class="pro-his-tj-title">
-                        <p><a href="javascript:;" class="xcheck">为您推荐<span>|</span></a>
-                            <a href="javascript:;">最近浏览</a></p>
+                        <p id="end"><a href="javascript:;" class="xcheck" id="endL">为您推荐<span>|</span></a>
+                            <a href="javascript:;" id="endR">最近浏览</a></p>
                     </div>
                     <div class="pro-his-tj-container">
                         <div class="xpro-his-tj-container">
@@ -703,15 +703,12 @@
             </div>
         </div>
 
-        <!-- 左侧选项卡 -->
-        <div class="xhome-fixl">
-            <ul id="xhome-fixl">
-                <li class=""><a href="">热门</a></li>
-                <li class=""><a href="">电视</a></li>
-                <li class=""><a href="">空调</a></li>
-                <li class=""><a href="">冰洗</a></li>
-                <li class=""><a href="">生活</a></li>
-                <li class=""><a href="">周边</a></li>
+        <!-- 右侧滚动效果 -->
+        <div class="pro-float-box">
+            <ul>
+                <li><a href="" class="pro-float-car"><img src="http://images.changhong.com/chgw/images/pro-float-icon_03.jpg" alt=""><span id="floadt_cart_totalNum">0</span></a></li>
+                <li class="pro-float-center"><a  href="" id="online-ask-item"><img src="http://images.changhong.com/chgw/images/pro-float-icon_05.jpg" alt="""></a></li>
+                <li class="pro-float-toTop"><a href="" class="back-top"><img src="http://images.changhong.com/chgw/images/pro-float-icon_07.jpg" alt=""></a></li>
             </ul>
         </div>
     </body>

@@ -629,6 +629,45 @@ h1.tips-nogoods {
               font-size: 14px;
               cursor: pointer;
               margin-left: 4px; }
+          .com-width .pro-selector-container .xpro-con .pro-selector-row .pro-selector .pro-list-other-box {
+            float: left;
+            width: 107px;
+            margin-right: 10px; }
+            .com-width .pro-selector-container .xpro-con .pro-selector-row .pro-selector .pro-list-other-box .pro-list-other {
+              height: 28px;
+              border: 1px solid #dddddd;
+              text-align: center;
+              width: 85px;
+              padding-right: 20px;
+              line-height: 28px;
+              background: url(../images/pro-popup-jt_06.jpg) no-repeat 85px center;
+              margin-top: 14px;
+              font-size: 14px;
+              color: #000000;
+              cursor: pointer; }
+            .com-width .pro-selector-container .xpro-con .pro-selector-row .pro-selector .pro-list-other-box .pro-list-warp {
+              display: none;
+              width: 410px;
+              overflow: hidden;
+              padding-bottom: 10px; }
+              .com-width .pro-selector-container .xpro-con .pro-selector-row .pro-selector .pro-list-other-box .pro-list-warp a {
+                font-size: 14px;
+                color: #000000;
+                display: block;
+                height: 28px;
+                line-height: 28px;
+                margin-top: 14px;
+                float: left;
+                border: 1px solid #ffffff;
+                padding: 0px 12px; }
+          .com-width .pro-selector-container .xpro-con .pro-selector-row .pro-selector .pro-list-other-box:hover .pro-list-other {
+            color: #f12020;
+            border: 1px solid #f12020; }
+          .com-width .pro-selector-container .xpro-con .pro-selector-row .pro-selector .pro-list-other-box:hover .pro-list-warp {
+            display: block; }
+            .com-width .pro-selector-container .xpro-con .pro-selector-row .pro-selector .pro-list-other-box:hover .pro-list-warp a:hover {
+              color: #f12020;
+              border: 1px solid #f12020; }
           .com-width .pro-selector-container .xpro-con .pro-selector-row .pro-selector a {
             font-size: 14px;
             color: #000000;
@@ -650,6 +689,8 @@ h1.tips-nogoods {
         margin-left: 168px; }
         .com-width .pro-selector-container .xpro-con .pro-selector-type .pro-selector a {
           padding: 0px 20px; }
+    .com-width .pro-selector-container .pro-conditions-show {
+      max-height: 100%; }
   .com-width .pro-selector-btn {
     position: absolute;
     width: 380px;
@@ -659,7 +700,8 @@ h1.tips-nogoods {
     left: 50%;
     margin-left: -190px;
     background: #ffffff;
-    border-top: 1px solid #ffffff; }
+    border-top: 1px solid #ffffff;
+    user-select: none; }
     .com-width .pro-selector-btn p {
       margin-left: 78px;
       line-height: 34px;
@@ -667,6 +709,9 @@ h1.tips-nogoods {
       cursor: pointer;
       font-size: 13px;
       color: #888; }
+  .com-width .pro-selector-btn2 p {
+    background: url(../images/xz-proxlsq.png) no-repeat 140px center;
+    padding-left: 86px; }
   .com-width .pro-re-warp {
     width: 200px;
     float: left; }
@@ -853,6 +898,126 @@ h1.tips-nogoods {
               cursor: pointer; }
           .com-width .pro-result .pro-result-container .pro-goods .pro-goods-choose .pro-goods-car:hover {
             border: 1px solid #f12020; }
+      .com-width .pro-result .pro-result-container .pro-goods:hover {
+        box-shadow: 0px 0px 5px 3px #e9e9e9; }
+    .com-width .pro-result .pro-result-page {
+      margin-left: 15px;
+      height: 58px;
+      border: 1px solid #eeeeee;
+      background: #ffffff; }
+      .com-width .pro-result .pro-result-page .pro-result-page-container {
+        padding-top: 17px;
+        overflow: hidden;
+        margin-left: 325px; }
+        .com-width .pro-result .pro-result-page .pro-result-page-container a {
+          display: block;
+          float: left;
+          padding: 0px 8px;
+          margin-right: 16px;
+          font-size: 14px;
+          line-height: 24px;
+          color: #666666; }
+        .com-width .pro-result .pro-result-page .pro-result-page-container .pro-result-page-num a {
+          height: 22px;
+          line-height: 24px;
+          border: 1px solid #cccccc;
+          color: #333333; }
+        .com-width .pro-result .pro-result-page .pro-result-page-container .pro-result-page-num a.page-cur {
+          border: 1px solid #e22421;
+          color: #ffffff;
+          background: #e22421; }
+        .com-width .pro-result .pro-result-page .pro-result-page-container .per-page span {
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 7px solid transparent;
+          border-right: 8px solid #666666;
+          border-bottom: 7px solid transparent;
+          margin: 5px 0px; }
+        .com-width .pro-result .pro-result-page .pro-result-page-container .next-page span {
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 7px solid transparent;
+          border-left: 8px solid #666666;
+          border-bottom: 7px solid transparent;
+          margin: 5px 0px; }
+    .com-width .pro-result .pro-his-tj {
+      margin-top: 45px;
+      margin-bottom: 70px;
+      overflow: hidden; }
+      .com-width .pro-result .pro-his-tj .pro-his-tj-title {
+        margin-left: 15px; }
+        .com-width .pro-result .pro-his-tj .pro-his-tj-title p {
+          line-height: 14px;
+          font-size: 14px;
+          color: #333333;
+          margin-left: 1px;
+          margin-bottom: 20px; }
+          .com-width .pro-result .pro-his-tj .pro-his-tj-title p a {
+            color: #e22421; }
+          .com-width .pro-result .pro-his-tj .pro-his-tj-title p a {
+            color: #333; }
+          .com-width .pro-result .pro-his-tj .pro-his-tj-title p a.xcheck {
+            color: #e22421; }
+          .com-width .pro-result .pro-his-tj .pro-his-tj-title p span {
+            color: #999999;
+            margin: 0px 10px; }
+          .com-width .pro-result .pro-his-tj .pro-his-tj-title p span {
+            margin-left: 12px; }
+    .com-width .pro-result .xpro-his-tj-container {
+      overflow: hidden; }
+      .com-width .pro-result .xpro-his-tj-container .pro-his-pro {
+        height: 300px;
+        width: 240px;
+        background: #ffffff;
+        float: left; }
+        .com-width .pro-result .xpro-his-tj-container .pro-his-pro .pro-his-img {
+          overflow: hidden;
+          text-align: center;
+          height: 190px;
+          line-height: 190px; }
+          .com-width .pro-result .xpro-his-tj-container .pro-his-pro .pro-his-img img {
+            width: 190px;
+            height: 190px;
+            display: block; }
+        .com-width .pro-result .xpro-his-tj-container .pro-his-pro .pro-his-img {
+          width: 190px;
+          height: 190px;
+          margin: 10px auto; }
+      .com-width .pro-result .xpro-his-tj-container .pro-his-pro {
+        margin-left: 14px; }
+      .com-width .pro-result .xpro-his-tj-container .pro-his-txt {
+        padding: 0px 25px; }
+        .com-width .pro-result .xpro-his-tj-container .pro-his-txt h1 {
+          line-height: 20px;
+          font-size: 14px;
+          font-weight: normal;
+          overflow: hidden;
+          text-align: left;
+          height: 20px;
+          word-break: break-all; }
+          .com-width .pro-result .xpro-his-tj-container .pro-his-txt h1 a {
+            font-size: 14px;
+            color: #000; }
+        .com-width .pro-result .xpro-his-tj-container .pro-his-txt p {
+          margin-top: 6px;
+          text-align: left;
+          display: block;
+          max-width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-size: 12px;
+          color: #999999;
+          line-height: 16px;
+          height: 16px; }
+        .com-width .pro-result .xpro-his-tj-container .pro-his-txt h2 {
+          font-size: 16px;
+          color: #f12020;
+          text-align: left;
+          font-weight: normal;
+          margin-top: 12px; }
 
 /* 产品中心家电主体部分end */
 /* 底部 */
@@ -1053,30 +1218,35 @@ h1.tips-nogoods {
 .foot-note p a {
   color: #999999; }
 
-.xhome-fixl {
+/* 右侧滚动效果 */
+.pro-float-box {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -670px;
-  margin-top: -150px; }
-  .xhome-fixl ul {
-    overflow: hidden;
-    display: none;
-    z-index: 200; }
-    .xhome-fixl ul li {
-      width: 45px;
-      height: 40px;
-      line-height: 40px;
-      text-align: center; }
-      .xhome-fixl ul li a {
+  right: 0px;
+  bottom: 224px;
+  z-index: 200;
+  display: block; }
+  .pro-float-box li {
+    width: 40px;
+    height: 40px; }
+    .pro-float-box li a {
+      position: relative;
+      display: block; }
+      .pro-float-box li a span {
         display: block;
-        font-size: 14px;
-        color: #666;
-        border-bottom: 1px solid #d6d6d6; }
-      .xhome-fixl ul li a:hover {
-        border: none;
-        background: #ee1411;
-        color: #fff; }
-    .xhome-fixl ul .clicked a {
-      background-color: #ee1411;
-      color: #fff; }
+        background: url(../images/pro-float-car-num_03.png) no-repeat;
+        width: 18px;
+        height: 22px;
+        position: absolute;
+        left: 50%;
+        margin-left: -9px;
+        top: -4px;
+        line-height: 18px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 12px;
+        display: none; }
+  .pro-float-box .pro-float-center {
+    border-top: 1px solid #f9f9f9;
+    border-bottom: 1px solid #f9f9f9; }
+  .pro-float-box .pro-float-toTop {
+    display: none; }

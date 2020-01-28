@@ -21,7 +21,10 @@ require(['list', 'index'], function(list, index){
         list.search();
         list.navTDownload();
         index.navT();
-        list.navT(); 
+        list.navT();
+        index.scrollTopR();
+        list.end();
+        list.pull();
     })
        
 })

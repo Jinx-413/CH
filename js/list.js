@@ -172,11 +172,42 @@ define(function(){
            
         })
     }
+    function end(){
+        //为你推荐选项卡操作
+        //取消a标签默认样式
+        $('.pro-his-tj').find('a').click(function(ev){
+            ev.preventDefault();
+        })
+        $('.pro-his-tj').find('#end').on('click', 'a', function(){
+            $('.pro-his-tj-container').find('.xpro-his-tj-container').eq($(this).index()).attr('style', 'display: block;font-size:12px;').siblings().attr('style', 'display: none;');
+            $(this).addClass('xcheck').siblings().removeClass();
+        })
+    }
+    function pull(){
+        //全部结果拉下收起
+        var isCur = true;
+        $('#morechoice').click(function(ev){
+            ev.preventDefault();
+            if(isCur){
+                $(this).find('p').html('收起');
+                $(this).addClass('pro-selector-btn2');
+                $('#screencondition').addClass('pro-conditions-show')
+                isCur = false;
+            }else{
+                $(this).find('p').html('分辨率，产品特色等更多条件选择');
+                $(this).removeClass('pro-selector-btn2');
+                $('#screencondition').removeClass('pro-conditions-show')
+                isCur = true;
+            }
+        })
+    }
 
     return {
         navDownload:navDownload,
         search:search,
         navTDownload:navTDownload,
-        navT,navT
+        navT:navT,
+        end:end,
+        pull:pull,
     }
 })

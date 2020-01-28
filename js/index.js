@@ -275,9 +275,7 @@ define(['jquery'], function($){
     }
 
     //右侧滑动效果
-    //取消a默认样式
-
-    
+    //取消a默认样式   
     function scrollTopR(){
         $('.pro-float-box').find('li a').click(function(ev){
             ev.preventDefault();
