@@ -517,6 +517,8 @@ h1.tips-nogoods {
         line-height: 47px;
         font-size: 14px;
         color: #000; }
+      .pro-position .com-width p a:hover {
+        color: #f12020; }
 
 .pro-search-results {
   width: 1150px;

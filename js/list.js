@@ -9,7 +9,11 @@ define(function(){
                 result = result.nav;
                 var str = ``;
                 for(var i = 0; i < result.length; i++){
-                    str = `<a href="">${result[i].name}</a>`;
+                    if(i == 0){
+                        str = `<a href="../index.html" style="color:#000;">${result[i].name}</a>`;
+                    }else{
+                        str = `<a href="list.html?id=${result[i].id}" target="_blank">${result[i].name}</a>`;
+                    }
                     $(`#n${i}`).html(str);
                     str = ``;
                 }
@@ -186,18 +190,202 @@ define(function(){
     function pull(){
         //全部结果拉下收起
         var isCur = true;
-        $('#morechoice').click(function(ev){
-            ev.preventDefault();
-            if(isCur){
-                $(this).find('p').html('收起');
-                $(this).addClass('pro-selector-btn2');
-                $('#screencondition').addClass('pro-conditions-show')
-                isCur = false;
-            }else{
-                $(this).find('p').html('分辨率，产品特色等更多条件选择');
-                $(this).removeClass('pro-selector-btn2');
-                $('#screencondition').removeClass('pro-conditions-show')
-                isCur = true;
+        if(getParam('id') == 1 || getParam('id') == 2){
+            $('#morechoice').show();
+            $('#morechoice').click(function(ev){
+                ev.preventDefault();
+                if(isCur){
+                    $(this).find('p').html('收起');
+                    $(this).addClass('pro-selector-btn2');
+                    $('#screencondition').addClass('pro-conditions-show')
+                    isCur = false;
+                }else{
+                    $(this).find('p').html('分辨率，产品特色等更多条件选择');
+                    $(this).removeClass('pro-selector-btn2');
+                    $('#screencondition').removeClass('pro-conditions-show')
+                    isCur = true;
+                }
+            })
+        }else{
+            $('#morechoice').hide();
+        };
+        
+    }
+    function title(){
+        //获取title
+        $.ajax({
+            type: 'get',
+            url: '../data/nav.json',
+            success: function(result){
+                result = result.nav;
+                var id = getParam("id");
+                document.title = result[id].data;
+            },
+            error: function(msg){
+                console.log(msg)
+            }
+        })
+    }
+    function getParam(name){
+        //获取导航栏信息
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);
+        //匹配目标的参数
+        if(r != null) return unescape(r[2]);return null;
+    }
+    function listData(){
+        //选项获取
+        $.ajax({
+            type: 'get',
+            url: '../data/listData.json',
+            success: function(result){
+                result = result.data;
+                var id = getParam('id') - 1;
+                var str1 = ` 
+                    <div class="com-width">
+                        <p>
+                            当前位置：
+                            <a href="../index.html">首页</a><span> &gt; </span><a href="">${result[id].name}</a>
+                        </p>
+                    </div>
+                `;
+                $('#pro-position').html(str1);
+                var arr = result[id].arr;
+                for(var i = 0; i < arr.length; i++){
+                    $(`
+                    <div class="pro-selector-row  clearfix" id="arr${i}">
+                    <div class="pro-selector-left">
+                    <p class="pro-selector-label" cd="${arr[i].name}" id="p${i}">
+                    ${arr[i].name}:
+                    </p>
+                    <a href="" class="pro-selector-all">全部</a>
+                    </div>
+                    <div class="pro-selector">
+                    </div>
+                    </div>
+
+                `).appendTo('#screencondition');
+                $("#arr0").addClass('pro-selector-type');
+                    for(var k = 0; k < arr[i].arr.length; k++){
+                        $(`
+                        <a href="">${arr[i].arr[k]}</a>
+                        `).appendTo(`#arr${i} .pro-selector`);
+                        
+                    }
+                    if($(`#p${i}`).attr('cd') == '价格'){
+                        $(`
+                        <div class="pro-selector-price">
+                        <input id="minPrice" type="text">
+                        <span>至</span>
+                        <input id="maxPrice" type="text">
+                        <input type="button" id="subPrice" value="确认">
+                        </div>
+                        `).appendTo(`#arr${i} .pro-selector`);
+                    }
+                    if($(`#p${i}`).attr('cd') == '尺寸'){
+                        $(`
+                        <p class="pro-selector-watch">（建议观看距离）</p>
+                        `).appendTo(`#arr${i} .pro-selector-left`)
+                        $(`#arr${i} .pro-selector`).html('');
+                        $(`
+                        <div class="pro-selector-size">
+                            <a href="" >32英寸及以下</a>
+                            <a href="" >39-43英寸</a>
+                            <a href="" >49-55英寸</a>
+                            <a href="" >58-60英寸</a>
+                            <a href="" >65英寸及以上</a>
+                        </div>
+                        <div class="pro-watch-dis" style="width:536px;">
+                            <span style="left: 0px"></span>
+                            <span style="left: 90px"></span>
+                            <span style="left: 270px"></span>
+                            <span style="left: 360px"></span>
+                            <span style="left: 475px"></span>
+                            <p style="margin-left: 40px">&lt;2米</p>
+                            <p style="margin-left:100px ">2-3米</p>
+                            <p style="margin-left:102px ">3-3.5米</p>
+                            <p style="margin-left: 65px">&gt;3.5米</p>
+                        </div>
+                        `).appendTo(`#arr${i} .pro-selector`);
+                      
+                    }
+                    if($(`#p${i}`).attr('cd') == '其他功能'){
+                        $(`#arr${i} .pro-selector-left a`).remove()
+                        $(`#arr${i} .pro-selector`).html('');
+                        for(var k = 0; k < arr[i].arr.length; k++){
+                            $(`
+                            <div class="pro-list-other-box" conditionlabel="能效等级" id="nxdj">
+                                <div class="pro-list-other">
+                                    ${arr[i].arr[k].name}
+                                </div>
+                                <div class="pro-list-warp" id="w${k}">
+                                </div>
+                            </div>
+                            `).appendTo(`#arr${i} .pro-selector`);
+                            for(var j = 0; j < arr[i].arr[k].arr.length; j++){
+                                $(`
+                                <a href="#">${arr[i].arr[k].arr[j]}</a>
+                                `).appendTo(`#w${k}`);
+                            }
+                        }
+                        
+                      
+                    }
+                    
+                }
+
+                
+
+            },
+            error: function(msg){
+                console.log(msg);
+            }
+        })
+    }
+    function dataDownload(){
+        $.ajax({
+            type: 'get',
+            url: '../data/listData.json',
+            success: function(result){
+                result = result.data;
+                var id = getParam('id') - 1;
+                var arr = result[id].list;
+                for(var i = 0; i < arr.length; i++){
+                    $(`
+                    <div class="pro-goods" data-code="CH5007639">
+                     <div class="pro-goods-img">
+                       <a href="#" target="_blank">
+                       <img src="${arr[i].img}" alt="" style="height: 190px; width: 190px;">
+                       </a>
+                     </div>
+                     <div class="pro-goods-text">
+                        <h1>
+                        <a href="#" target="_blank" title="">${arr[i].data}</a>
+                        </h1>
+                        <p style="font-size: 12px; margin-top: 10px; color: #888;" id="">${arr[i].p}</p>
+                          <p><span id="">￥${arr[i].pay}</span><a href="#">0人评价</a></p>
+                     </div>
+                     <div class="pro-goods-choose"> 
+                        <div class="pro-goods-db">
+                          <div class="pro-goods-check">
+                            <input type="checkbox" >
+                         </div>
+                           <p>对比</p>
+                         </div>   
+                         <div class="pro-goods-starts">
+                         <p>收藏</p>
+                       </div>  
+                       <div class="pro-goods-car">
+                        <p>加入购物车</p>
+                        </div>
+                       </div>  
+                       </div>
+                    `).appendTo('.pro-result-container');
+                }
+            },
+            error: function(msg){
+                console.log(msg);
             }
         })
     }
@@ -209,5 +397,8 @@ define(function(){
         navT:navT,
         end:end,
         pull:pull,
+        title:title,
+        listData:listData,
+        dataDownload:dataDownload,
     }
 })

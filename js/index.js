@@ -24,7 +24,11 @@ define(['jquery'], function($){
                 result = result.nav;
                 var str = ``;
                 for(var i = 0; i < result.length; i++){
-                    str = `<a href="">${result[i].name}</a>`;
+                    if(i == 0){
+                        str = `<a href="index.html">${result[i].name}</a>`;
+                    }else{
+                        str = `<a href="html/list.html?id=${result[i].id}" target="_blank">${result[i].name}</a>`;
+                    }                    
                     $(`#n${i}`).html(str);
                     str = ``;
                 }
