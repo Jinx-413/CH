@@ -121,6 +121,7 @@ define(['jquery'],function($){
                 $('.pro-ditem-detail').html(str2);
                 $('#ProDiemCp').find('img').attr('src', arr[0]);
                 $('#daxiaocontrol').html(str);
+                $('.big-pic').find('img').attr('src', arr[0]);
                 $("#daxiaocontrol li:first").addClass("pro-cur");
                 $("#daxiaocontrol li:last").addClass("m0");
                 var a = 95 * $('#daxiaocontrol').find('li').size();
