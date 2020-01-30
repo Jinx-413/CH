@@ -28,18 +28,20 @@ define(function(){
             url: '../data/head.json',
             success: function(result){
                 var j = 0;
+                var l = 0;
+                var k = [0,1,2,5,8,9,11,12,16,17,18,19,24,25,26,27,32,33,34,35]
                 for(var arr in result){
                     str =``;
                     for(var i = 0; i < result[arr].length; i++){
                         str += `
                         <div class="home-sub-box">
-                        <a href="#" target="_blank" class="home-goods-img"><img class="lazy-zt" src="${result[arr][i].img}"></a>
-                        <p><a href="#" target="_blank" title="${result[arr][i].data}">${result[arr][i].data}</a></p>
+                        <a href="detailed.html?id=${k[l]}" target="_blank" class="home-goods-img"><img class="lazy-zt" src="${result[arr][i].img}"></a>
+                        <p><a href="detailed.html?id=${k[l]}" target="_blank" title="${result[arr][i].data}">${result[arr][i].data}</a></p>
                         <h1>￥${result[arr][i].pay}</h1>
                         <div class="home-sub-line"></div>
                         </div>
                         `
-                        
+                        l++;
                     }
                     $(`#div${j}`).html(str);
                     j++;
@@ -355,7 +357,7 @@ define(function(){
                     $(`
                     <div class="pro-goods" data-code="CH5007639">
                      <div class="pro-goods-img">
-                       <a href="#" target="_blank">
+                       <a href="detailed.html?id=${arr[i].id}" target="_blank">
                        <img src="${arr[i].img}" alt="" style="height: 190px; width: 190px;">
                        </a>
                      </div>

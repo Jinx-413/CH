@@ -577,7 +577,7 @@ h1.tips-nogoods {
             margin-top: 10px;
             width: 19px;
             height: 86px;
-            background: url(pro-ditem-pre_03.jpg) no-repeat left center; }
+            background: url(../images/pro-ditem-pre_03.jpg) no-repeat left center; }
           .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-pic .pro-ditem-items div {
             float: left;
             margin-top: 10px;
@@ -594,13 +594,17 @@ h1.tips-nogoods {
                   width: 84px;
                   height: 84px;
                   border: 1px solid #eaeaea; }
+                .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-pic .pro-ditem-items div ul li .pro-cur {
+                  border: 1px solid #ed3c42; }
+              .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-pic .pro-ditem-items div ul .m0 {
+                margin-right: 0; }
           .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-pic .pro-ditem-items .item-next {
             display: block;
             float: left;
             margin-top: 10px;
             width: 19px;
             height: 86px;
-            background: url(pro-ditem-next_03.jpg) no-repeat right center; }
+            background: url(../images/pro-ditem-next_03.jpg) no-repeat right center; }
       .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price {
         width: 650px;
         float: right; }
@@ -726,7 +730,7 @@ h1.tips-nogoods {
                 line-height: 28px;
                 line-height: 28px\9; }
               .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-price-where div .address-select .address-select-shape {
-                background: url(x003.png) no-repeat right center; }
+                background: url(../images/x003.png) no-repeat right center; }
               .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-price-where div .address-select .address-select-content {
                 display: none;
                 position: absolute;
@@ -738,7 +742,7 @@ h1.tips-nogoods {
               .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-price-where div .address-select .address-select-content {
                 width: 430px;
                 left: -1px;
-                height: auto;
+                height: 280px;
                 margin-top: 0px; }
                 .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-price-where div .address-select .address-select-content .address-select-area {
                   overflow: visible;
@@ -883,11 +887,11 @@ h1.tips-nogoods {
               color: #333;
               font-size: 14px; }
             .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-price-num p .kf {
-              background: url(pro-ditem-kf_03.jpg) no-repeat left center; }
+              background: url(../images/pro-ditem-kf_03.jpg) no-repeat left center; }
             .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-price-num p .like {
-              background: url(pro-ditem-like_03.jpg) no-repeat left center; }
+              background: url(../images/pro-ditem-like_03.jpg) no-repeat left center; }
             .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-price-num p .share {
-              background: url(pro-ditem-share_03.jpg) no-repeat left center; }
+              background: url(../images/pro-ditem-share_03.jpg) no-repeat left center; }
         .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-ditem-buy, .pro-detail .pro-detail-con .pro-dcon-item .pro-ditem-price .pro-ditem-addin {
           display: block;
           float: left;
@@ -929,6 +933,8 @@ h1.tips-nogoods {
         line-height: 58px;
         color: #000;
         font-size: 14px; }
+      .pro-detail .pro-detail-con .pro-ditem-cs .sel {
+        border-bottom: 2px solid #f12020; }
       .pro-detail .pro-detail-con .pro-ditem-cs a {
         font-size: 16px; }
       .pro-detail .pro-detail-con .pro-ditem-cs span {
@@ -990,7 +996,11 @@ h1.tips-nogoods {
         border: 1px solid #cfcfcf;
         line-height: 40px; }
         .pro-detail .pro-detail-con .pro-ditem-tab .pro-ditem-guige .common-service h3 {
-          color: red; }
+          color: red;
+          font-weight: bold;
+          font-size: 1.17rem; }
+        .pro-detail .pro-detail-con .pro-ditem-tab .pro-ditem-guige .common-service p {
+          color: #777; }
     .pro-detail .pro-detail-con .pro-ditem-tab .pro-review-tabcon {
       width: 1226px;
       border: 1px solid #cfcfcf;

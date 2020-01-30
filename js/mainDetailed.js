@@ -24,6 +24,12 @@ require(['list', 'index', 'detailed'], function(list, index, detailed){
         index.navT();
         list.navT();
         index.scrollTopR();
+        detailed.choose();
+        detailed.imgShow();
+        detailed.bigImg();
+        detailed.gps();
+        detailed.chooseDown();
+        detailed.dataDownload();
     })
        
 })
