@@ -28,6 +28,8 @@ require(['list', 'index'], function(list, index){
         list.pull();
         list.listData();
         list.dataDownload();
+        list.shopping();
+        index.header();
     })
        
 })

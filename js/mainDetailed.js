@@ -30,6 +30,8 @@ require(['list', 'index', 'detailed'], function(list, index, detailed){
         detailed.gps();
         detailed.chooseDown();
         detailed.dataDownload();
+        detailed.shopping();
+        index.header();
     })
        
 })

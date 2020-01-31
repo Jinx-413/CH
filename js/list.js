@@ -378,7 +378,7 @@ define(function(){
                          <div class="pro-goods-starts">
                          <p>收藏</p>
                        </div>  
-                       <div class="pro-goods-car">
+                       <div class="pro-goods-car" p="${arr[i].id}">
                         <p>加入购物车</p>
                         </div>
                        </div>  
@@ -389,6 +389,13 @@ define(function(){
             error: function(msg){
                 console.log(msg);
             }
+        })
+    }
+    function shopping(){
+        //添加产品购物车
+        $('.pro-result-container').on('click', '.pro-goods-car p', function(){
+            var a = $(this).parent().attr('p');
+            open(`shopping.html?id=${a}`);
         })
     }
 
@@ -402,5 +409,6 @@ define(function(){
         title:title,
         listData:listData,
         dataDownload:dataDownload,
+        shopping: shopping,
     }
 })

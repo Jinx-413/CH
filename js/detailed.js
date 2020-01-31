@@ -144,6 +144,14 @@ define(['jquery'],function($){
         if(r != null) return unescape(r[2]);return null;
     }
 
+    function shopping(){
+        //加入购物车
+        var id = getParam('id');
+        $('#pro-ditem-addin').click(function(){
+            $(this).attr('href', `shopping.html?id=${id}`);
+        })
+    }
+
     return {
         choose: choose,
         imgShow: imgShow,
@@ -151,5 +159,6 @@ define(['jquery'],function($){
         gps: gps,
         chooseDown: chooseDown,
         dataDownload: dataDownload,
+        shopping: shopping,
     }
 })
