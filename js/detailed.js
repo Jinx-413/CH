@@ -1,4 +1,4 @@
-define(['jquery'],function($){
+define(['jquery', 'jquery-cookie'],function($){
     function choose(){
         //图片点击左右移动
         $('.pro-ditem-items').find('.item-next').click(function(){
@@ -94,7 +94,6 @@ define(['jquery'],function($){
             success: function(result){
                 result = result.data;
                 var id = getParam('id');
-                console.log(result[id]);
                 //title修改
                 document.title = result[id].data;
                 //a title修改
@@ -147,11 +146,136 @@ define(['jquery'],function($){
     function shopping(){
         //加入购物车
         var id = getParam('id');
+        //cookie
+        //当不存在的时候
         $('#pro-ditem-addin').click(function(){
             $(this).attr('href', `shopping.html?id=${id}`);
+            var first = $.cookie('jinx') == null ? true : false;
+            if(first){
+                var arr = [{id: id, num: 1}];
+                $.cookie('jinx', JSON.stringify(arr),{
+                    expires: 7,
+                    path: '/'
+                })
+            }else{
+                //如果之前存在
+                var cookieStr = $.cookie('jinx');
+                var cookieArr = JSON.parse(cookieStr);
+                var same = false;
+                for(var i = 0; i < cookieArr.length; i++){
+                    if(cookieArr[i].id == id){
+                        cookieArr[i].num++;
+                        same = true;
+                        break;
+                    }
+                }
+                if(!same){
+                    var obj = {id: id, num: 1};
+                    cookieArr.push(obj);
+                }
+                $.cookie('jinx', JSON.stringify(cookieArr), {
+                    expires: 7,
+                    path: '/'
+                })
+              
+            }
+            console.log($.cookie('jinx'));
+            sc_num();
+            sc_msg();
         })
     }
 
+    function sc_num(){
+        //购物车商品数量计算
+        var cookieStr = $.cookie('jinx', {path:'/html'});
+        var sum = 0;
+        if(cookieStr){
+            var cookieArr = JSON.parse(cookieStr);
+
+            for(var i = 0; i < cookieArr.length; i++){
+                sum += cookieArr[i].num;
+            }
+            $('#floadt_cart_totalNum').show();
+            $('#floadt_cart_totalNum').html(sum);
+            $('#mycartNum').html(sum);
+        }else{
+            $('#floadt_cart_totalNum').show();
+            $('#floadt_cart_totalNum').html(0);
+            $('#mycartNum').html(0);
+        }
+    }
+    function sc_msg(){
+        //购物车数据
+        $.ajax({
+            type: 'get',
+            url: '../data/detailed.json',
+            success: function(result){
+                result = result.data
+                console.log(result);
+                var cookieArr = JSON.parse($.cookie('jinx'), {path: '/html'});
+                console.log(cookieArr);
+                var newArr = [];
+                if(cookieArr){
+                    for(var i = 0; i < result.length; i++){
+                        for(var j = 0; j < cookieArr.length; j++){
+                            if(cookieArr[j].id == result[i].id){
+                                result[i].num = cookieArr[j].num;
+                                newArr.push(result[i]);
+                            }
+                        }
+                    }
+                    var str = ``
+                    for(var i = 0; i < newArr.length; i++){
+                        str += `<div class="tool-tips-row">
+                        <p>
+                            <a class="cart_url" target="_blank" id="#">${newArr[i].data}</a>
+                        </p>
+                        <h1 cnne="${newArr[i].id}">单价<span>${newArr[i].pay}</span>元<b>x ${newArr[i].num}</b><a href="javascript:;" id="del">删除</a><a href="" class="tool-goods-tips"></a>
+                        </h1>
+                    </div>`;
+                    }
+                    $('.tool-container-tips-warp').show();
+                    $('.tool-container-tips-warp').html(str);
+                    $('.tips-nogoods').hide();
+                    $('.tool-goods-pay').show();
+
+                    //删除商品
+                    $('.tool-container-tips-warp').on('click', '#del', function(){
+                        //页面数据清除
+                        $(this).closest('.tool-tips-row').remove();
+                        //cookie数据清除
+                        for(var i = 0; i < cookieArr.length; i++){
+                            if(cookieArr[i].id == $(this).parent('h1').attr('cnne')){
+                                cookieArr.splice(i, 1);
+                            }
+                        }
+                        $.cookie('jinx', JSON.stringify(cookieArr), {
+                            expires: 7,
+                            path: '/'
+                        })
+                        sc_num();
+                        if(cookieArr.length == 0){
+                            $('.tips-nogoods').show();
+                            $('.tool-goods-pay').hide();
+                            $('.tool-container-tips-warp').hide();
+                        }
+                    })
+                    if(cookieArr.length == 0){
+                        $('.tips-nogoods').show();
+                        $('.tool-goods-pay').hide();
+                        $('.tool-container-tips-warp').hide();
+                    }
+
+                }
+               
+                console.log(newArr)
+
+            },
+            error: function(msg){
+                alert(msg);
+            }
+        })
+    }
     return {
         choose: choose,
         imgShow: imgShow,
@@ -160,5 +284,7 @@ define(['jquery'],function($){
         chooseDown: chooseDown,
         dataDownload: dataDownload,
         shopping: shopping,
+        sc_num: sc_num,
+        sc_msg: sc_msg,
     }
 })

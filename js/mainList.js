@@ -3,12 +3,17 @@ console.log("执行成功");
 require.config({
     paths: {
         'jquery': '../js/jquery-1.10.1.min',
+        "jquery-cookie": "jquery.cookie",
         'list':'../js/list',
         'index': '../js/index'
+    },
+    shim:{
+        //设置jquery-cookie依赖于jquery开发的
+		"jquery-cookie": ["jquery"],
     }
 })
 
-require(['list', 'index'], function(list, index){
+require(['list', 'index', 'detailed'], function(list, index, detailed){
 
     $(function(){
 
@@ -30,6 +35,8 @@ require(['list', 'index'], function(list, index){
         list.dataDownload();
         list.shopping();
         index.header();
+        detailed.sc_num();
+        detailed.sc_msg();
     })
        
 })

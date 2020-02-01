@@ -139,6 +139,17 @@ body {
   background: url(../images/header03.png) no-repeat left center;
   margin-left: 15px;
   margin-right: 8px; }
+  .header .header-container .header-right .header-motool .motool-tool .motool-tool-row .tool-gw span {
+    display: block;
+    padding: 0px 6px;
+    font-size: 12px;
+    border-radius: 6px;
+    line-height: 13px;
+    height: 14px;
+    float: right;
+    margin-top: 3px;
+    background: #e42121;
+    margin-left: 5px; }
 
 .tool-myCQ-tips {
   position: absolute;
@@ -229,6 +240,37 @@ body {
 .tool-container-tips-warp {
   max-height: 339px;
   overflow: auto; }
+  .tool-container-tips-warp .tool-tips-row {
+    margin: 0px 28px;
+    padding-top: 18px;
+    border-bottom: 1px solid #e8e8e8;
+    height: 94px; }
+    .tool-container-tips-warp .tool-tips-row p {
+      line-height: 25px;
+      height: 50px;
+      overflow: hidden; }
+      .tool-container-tips-warp .tool-tips-row p a {
+        font-size: 14px;
+        color: #333333; }
+    .tool-container-tips-warp .tool-tips-row h1 {
+      font-weight: normal;
+      font-size: 12px;
+      color: #666666;
+      line-height: 24px;
+      margin-top: 5px; }
+      .tool-container-tips-warp .tool-tips-row h1 span {
+        font-size: 16px;
+        color: #eb1a21;
+        margin: 0px 6px; }
+      .tool-container-tips-warp .tool-tips-row h1 b {
+        margin-left: 15px;
+        font-weight: normal; }
+      .tool-container-tips-warp .tool-tips-row h1 a {
+        float: right;
+        color: #666666; }
+      .tool-container-tips-warp .tool-tips-row h1 .tool-goods-tips {
+        color: #e71d12;
+        margin-right: 17px; }
 
 .tool-goods-pay {
   height: 46px;

@@ -13,12 +13,15 @@ require.config({
     }
 })
 
-require(['index', 'shopping'], function(index, shopping){
+require(['index', 'shopping', 'detailed'], function(index, shopping, detailed){
 
     $(function(){
         index.header();
         index.scrollTopR();
         shopping.dataDownload();
+        detailed.sc_num();
+        detailed.sc_msg();
+        console.log($.cookie('jinx'));
     })
        
 })

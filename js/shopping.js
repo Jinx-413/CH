@@ -1,4 +1,4 @@
-define(['jquery'], function($){
+define(['jquery', 'jquery-cookie'], function($){
     function dataDownload(){
         //获取购物车数据
         $.ajax({
@@ -6,18 +6,18 @@ define(['jquery'], function($){
             url: '../data/detailed.json',
             success: function(result){
                 result = result.data;
-                console.log(result);
                 var i = getParam('id');
                 var arr = result[i];
-                console.log(arr);
                 $('#success_cart_image').attr('src',arr.img1[0]);
                 $('#goodsname').html(arr.data);
+                $('#goodsname').attr('title', arr.data);
             },
             error: function(msg){
                 console.log(msg);
             }
         })
     }
+
 
     function getParam(name){
         //获取导航栏信息
