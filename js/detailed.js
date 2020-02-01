@@ -272,7 +272,79 @@ define(['jquery', 'jquery-cookie'],function($){
 
             },
             error: function(msg){
-                alert(msg);
+                console.log(msg);
+            }
+        })
+    }
+    function sc_msgg(){
+        //购物车数据
+        $.ajax({
+            type: 'get',
+            url: 'data/detailed.json',
+            success: function(result){
+                result = result.data
+                console.log(result);
+                var cookieArr = JSON.parse($.cookie('jinx'), {path: '/html'});
+                console.log(cookieArr);
+                var newArr = [];
+                if(cookieArr){
+                    for(var i = 0; i < result.length; i++){
+                        for(var j = 0; j < cookieArr.length; j++){
+                            if(cookieArr[j].id == result[i].id){
+                                result[i].num = cookieArr[j].num;
+                                newArr.push(result[i]);
+                            }
+                        }
+                    }
+                    var str = ``
+                    for(var i = 0; i < newArr.length; i++){
+                        str += `<div class="tool-tips-row">
+                        <p>
+                            <a class="cart_url" target="_blank" id="#">${newArr[i].data}</a>
+                        </p>
+                        <h1 cnne="${newArr[i].id}">单价<span>${newArr[i].pay}</span>元<b>x ${newArr[i].num}</b><a href="javascript:;" id="del">删除</a><a href="" class="tool-goods-tips"></a>
+                        </h1>
+                    </div>`;
+                    }
+                    $('.tool-container-tips-warp').show();
+                    $('.tool-container-tips-warp').html(str);
+                    $('.tips-nogoods').hide();
+                    $('.tool-goods-pay').show();
+
+                    //删除商品
+                    $('.tool-container-tips-warp').on('click', '#del', function(){
+                        //页面数据清除
+                        $(this).closest('.tool-tips-row').remove();
+                        //cookie数据清除
+                        for(var i = 0; i < cookieArr.length; i++){
+                            if(cookieArr[i].id == $(this).parent('h1').attr('cnne')){
+                                cookieArr.splice(i, 1);
+                            }
+                        }
+                        $.cookie('jinx', JSON.stringify(cookieArr), {
+                            expires: 7,
+                            path: '/'
+                        })
+                        sc_num();
+                        if(cookieArr.length == 0){
+                            $('.tips-nogoods').show();
+                            $('.tool-goods-pay').hide();
+                            $('.tool-container-tips-warp').hide();
+                        }
+                    })
+                    if(cookieArr.length == 0){
+                        $('.tips-nogoods').show();
+                        $('.tool-goods-pay').hide();
+                        $('.tool-container-tips-warp').hide();
+                    }
+
+                }
+               
+                console.log(newArr)
+
+            },
+            error: function(msg){
+                console.log(msg);
             }
         })
     }
@@ -286,5 +358,6 @@ define(['jquery', 'jquery-cookie'],function($){
         shopping: shopping,
         sc_num: sc_num,
         sc_msg: sc_msg,
+        sc_msgg: sc_msgg,
     }
 })

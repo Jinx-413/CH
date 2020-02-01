@@ -27,7 +27,7 @@ require(['index', 'detailed'], function(index, detailed){
         index.contentDownload();
         index.fixedL();
         detailed.sc_num();
-        detailed.sc_msg();
+        detailed.sc_msgg();
         console.log($.cookie('jinx'));
     })
 })
