@@ -30,5 +30,6 @@ require(['index', 'detailed'], function(index, detailed){
         detailed.sc_msgg();
         console.log($.cookie('jinx'));
         //服务器路径bug解决
+        //服务器路径bug解决
     })
 })
