@@ -46,8 +46,8 @@ define(['jquery', 'jquery-cookie'],function($){
             $(this).find('.big-mirror').hide();
 
         }).mousemove(function(ev){
-            var l = ev.clientX - $(this).offset().left - 102;
-            var t = ev.clientY - $(this).offset().top;
+            var l = ev.pageX - $(this).offset().left - 102;
+            var t = ev.pageY - $(this).offset().top - 102;
 
             if(l <= 0){
                 l = 0;
@@ -152,7 +152,7 @@ define(['jquery', 'jquery-cookie'],function($){
             $(this).attr('href', `shopping.html?id=${id}`);
             var first = $.cookie('jinx') == null ? true : false;
             if(first){
-                var arr = [{id: id, num: 1}];
+                var arr = [{id: id, num: parseInt($('#count_value').val())}];
                 $.cookie('jinx', JSON.stringify(arr),{
                     expires: 7,
                     path: '/'
@@ -170,7 +170,7 @@ define(['jquery', 'jquery-cookie'],function($){
                     }
                 }
                 if(!same){
-                    var obj = {id: id, num: 1};
+                    var obj = {id: id, num: parseInt($('#count_value').val())};
                     cookieArr.push(obj);
                 }
                 $.cookie('jinx', JSON.stringify(cookieArr), {
@@ -198,6 +198,7 @@ define(['jquery', 'jquery-cookie'],function($){
             $('#floadt_cart_totalNum').show();
             $('#floadt_cart_totalNum').html(sum);
             $('#mycartNum').html(sum);
+            $('#totalNum').html(sum);
         }else{
             $('#floadt_cart_totalNum').show();
             $('#floadt_cart_totalNum').html(0);
@@ -224,6 +225,7 @@ define(['jquery', 'jquery-cookie'],function($){
                             }
                         }
                     }
+                    var sum = 0;
                     var str = ``
                     for(var i = 0; i < newArr.length; i++){
                         str += `<div class="tool-tips-row">
@@ -233,7 +235,9 @@ define(['jquery', 'jquery-cookie'],function($){
                         <h1 cnne="${newArr[i].id}">单价<span>${newArr[i].pay}</span>元<b>x ${newArr[i].num}</b><a href="javascript:;" id="del">删除</a><a href="" class="tool-goods-tips"></a>
                         </h1>
                     </div>`;
+                        sum += parseInt(newArr[i].pay) * newArr[i].num
                     }
+                    $('#totalPrice').html(`￥${sum}.00`);
                     $('.tool-container-tips-warp').show();
                     $('.tool-container-tips-warp').html(str);
                     $('.tips-nogoods').hide();
@@ -254,6 +258,7 @@ define(['jquery', 'jquery-cookie'],function($){
                             path: '/'
                         })
                         sc_num();
+                        sc_msg();
                         if(cookieArr.length == 0){
                             $('.tips-nogoods').show();
                             $('.tool-goods-pay').hide();
@@ -296,6 +301,7 @@ define(['jquery', 'jquery-cookie'],function($){
                             }
                         }
                     }
+                    var sum = 0;
                     var str = ``
                     for(var i = 0; i < newArr.length; i++){
                         str += `<div class="tool-tips-row">
@@ -305,7 +311,9 @@ define(['jquery', 'jquery-cookie'],function($){
                         <h1 cnne="${newArr[i].id}">单价<span>${newArr[i].pay}</span>元<b>x ${newArr[i].num}</b><a href="javascript:;" id="del">删除</a><a href="" class="tool-goods-tips"></a>
                         </h1>
                     </div>`;
+                    sum += parseInt(newArr[i].pay) * newArr[i].num
                     }
+                    $('#totalPrice').html(`￥${sum}.00`);
                     $('.tool-container-tips-warp').show();
                     $('.tool-container-tips-warp').html(str);
                     $('.tips-nogoods').hide();
@@ -326,6 +334,7 @@ define(['jquery', 'jquery-cookie'],function($){
                             path: '/'
                         })
                         sc_num();
+                        sc_msgg();
                         if(cookieArr.length == 0){
                             $('.tips-nogoods').show();
                             $('.tool-goods-pay').hide();
@@ -348,6 +357,22 @@ define(['jquery', 'jquery-cookie'],function($){
             }
         })
     }
+    function add(){
+        var num = $('#count_value').val();
+        $('#nextCount').click(function(){
+            $('#count_value').val(++num);
+        })
+        $('#preCount').click(function(){
+            
+            if(num == 1){
+                $('#count_value').val(1);
+            }else{
+                $('#count_value').val(--num);
+            }
+        })
+    }
+
+    
     return {
         choose: choose,
         imgShow: imgShow,
@@ -359,5 +384,6 @@ define(['jquery', 'jquery-cookie'],function($){
         sc_num: sc_num,
         sc_msg: sc_msg,
         sc_msgg: sc_msgg,
+        add: add,
     }
 })

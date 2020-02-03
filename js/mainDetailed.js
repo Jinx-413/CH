@@ -38,6 +38,7 @@ require(['list', 'index', 'detailed'], function(list, index, detailed){
         detailed.shopping();
         detailed.sc_num();
         detailed.sc_msg();
+        detailed.add();
         index.header();
     })
        

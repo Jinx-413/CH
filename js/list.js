@@ -394,9 +394,42 @@ define(function(){
     function shopping(){
         //添加产品购物车
         $('.pro-result-container').on('click', '.pro-goods-car p', function(){
-            var a = $(this).parent().attr('p');
-            open(`shopping.html?id=${a}`);
+            var id = $(this).parent().attr('p');
+              //cookie
+            //当不存在的时候
+            var first = $.cookie('jinx') == null ? true : false;
+            if(first){
+                var arr = [{id: id, num: 1}];
+                $.cookie('jinx', JSON.stringify(arr),{
+                    expires: 7,
+                    path: '/'
+                })
+            }else{
+                //如果之前存在
+                var cookieStr = $.cookie('jinx');
+                var cookieArr = JSON.parse(cookieStr);
+                var same = false;
+                for(var i = 0; i < cookieArr.length; i++){
+                    if(cookieArr[i].id == id){
+                        cookieArr[i].num++;
+                        same = true;
+                        break;
+                    }
+                }
+                if(!same){
+                    var obj = {id: id, num: 1};
+                    cookieArr.push(obj);
+                }
+                $.cookie('jinx', JSON.stringify(cookieArr), {
+                    expires: 7,
+                    path: '/'
+                })
+              
+            }
+            open(`shopping.html?id=${id}`);
         })
+       
+       
     }
 
     return {

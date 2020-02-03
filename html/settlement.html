@@ -6,8 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>购物车-长虹官网—让想象发生</title>
         <link rel="shortcut icon" href="http://cn.changhong.com/favicon.ico">
-        <link rel="stylesheet" href="../css/shopping.min.css">
-        <script src="../js/require.js" async="true" defer data-main="../js/mainShopping"></script>
+        <link rel="stylesheet" href="../css/settlement.min.css">
+        <script src="../js/require.js" async="true" defer data-main="../js/mainSettlement"></script>
     </head>
     <body>
         <!-- 头部 -->
@@ -96,43 +96,57 @@
                     </a>
                 </div>
     </div>
-
-    <!-- 加入购物车提示 -->
-    <div class="pro-addin pro-center">
-        <div class="pro-addin-detail">
-            <img id="success_cart_image" src="" alt="" width="90" height="90">
-            <div>
-                <p style="line-height: 30px;height: 30px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;max-width: 500px;"><span id="goodsname" title=""></span></p>
-                <h2 id="goodstype">已成功加入购物车！</h2>
-            </div>
-            <a href="../index.html" class="pro-addin-continue" onclick="javascript:;">继续购物</a>    
-            <a href="settlement.html" class="pro-addin-buy">去购物车结算</a>
-        </div>  
-    
-        
-        <div class="pro-addin-others">
-            <div class="pro-addin-others-tit">
-                <a href="javascript:void(0)">热门推荐</a>
-            </div> 
-            <div class="pro-addin-others-con clearfix">
-    
-    
-                <a href="http://cn.changhong.com/cpzx/chiq/chiq_televisions/q5t/201803/t20180316_68689.html" target="_blank">
-                    <div class="pro-adoth-img">
-                        <img src="http://images.changhong.com/chgw/jrgwc/rmtj/201803/W020180320663243591502.jpg" alt="" width="200" height="200">
-                    </div>
-                    <div class="pro-adoth-con" r3code="CH5010946">
-                        <h3>55英寸4K超高...</h3>
-                        <p>AI3.0 人工智能 4K超高清 HDR</p>
-                        <span>￥5397.00</span>
-                    </div>
-                </a>
-               
-            </div>
-        </div>
     </div>
-    <!-- 加入购物车提示 -->
+        <!-- 购物车商品 -->
 
+        <div class="com-width">
+			<!--购物车商品-->
+			<div class="my-car-bk" id="cart_goods_info">
+		
+
+              </div>
+                        
+
+
+        <!--购物车商品 end-->
+        <!--折扣购买-->
+        <div class="my-car-bk">
+                        </div>
+                    <!--折扣购买 end-->
+        <!--为您推荐-->
+        <div class="my-car-bk">
+            </div>
+        <!--为您推荐 end-->
+        </div>
+        <!-- 结算 -->
+        <div class="car-sum-price">
+			<div class="com-width">
+				<div class="sum-pro-lf">
+					<p class="car-pro-count">
+						已选<span id="goods_num">0</span>件商品
+					</p>
+					<!--<i></i>
+					<p class="car-pro-int">
+						可获赠积分<span id="point">0</span>个
+					</p>-->
+                    <i></i>
+                    <p class="car-pro-int">
+                        满减优惠-<span id="ACTIVE_MANJIAN_TAOTAL">0</span>元
+                    </p>
+                    <i></i>
+          					<p class="car-pro-int car-tc-zp">
+          						查看赠品<span id="zeng-num">0</span>件
+          					</p>
+				</div>
+				<div class="sum-pro-rt">
+					<p class="sum-price">
+						总计<span id="cartTotal">0.00</span>元
+					</p>
+					<input type="button" id="next_submit2" href="javascript:void(0)" class="car-pay-btn" value="立即结算">
+				</div>
+			</div>
+		</div>
+        <!-- 结算 -->
         <!-- 底部 -->
         <div class="footer">
             <div class="com-width">
