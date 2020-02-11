@@ -605,6 +605,98 @@ h1.tips-nogoods {
         cursor: pointer; }
 
 /* 结算 */
+/* 错误提示 */
+#append_parent .dialog_head {
+  margin: 0;
+  position: relative;
+  z-index: auto;
+  text-align: center;
+  border: none; }
+  #append_parent .dialog_head .dialog_title {
+    background-color: #FFF;
+    display: inline-block;
+    height: 20px;
+    padding: 10px 20px;
+    border: none 0; }
+    #append_parent .dialog_head .dialog_title .dialog_title_icon {
+      font-size: 20px;
+      color: #666;
+      font-weight: 100;
+      line-height: 20px; }
+  #append_parent .dialog_head .dialog_title {
+    font-weight: 100;
+    padding: 15px 20px; }
+  #append_parent .dialog_head .dialog_close_button {
+    font-family: Verdana;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: lighter;
+    color: #999;
+    text-align: center;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    cursor: pointer; }
+  #append_parent .dialog_head .dialog_close_button {
+    font-size: 20px;
+    color: #ddd; }
+
+#append_parent .dialog_message_contents {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  min-width: 360px;
+  padding: 30px 20px; }
+  #append_parent .dialog_message_contents i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 34px;
+    height: 34px;
+    margin-right: 8px; }
+  #append_parent .dialog_message_contents .alert_info {
+    background: transparent url(../images/info.gif) no-repeat 0 0; }
+  #append_parent .dialog_message_contents .alert_error {
+    background: transparent url(../images/error.gif) no-repeat 0 0; }
+
+#append_parent .dialog_message_contents {
+  font-size: 16px;
+  color: #666; }
+
+#append_parent .dialog_buttons_bar {
+  padding: 15px 0 30px;
+  text-align: center;
+  margin: 0;
+  color: #666; }
+  #append_parent .dialog_buttons_bar .dialog-bottom-btn {
+    font-size: 12px;
+    margin-left: 10px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #777;
+    background-color: #F5F5F5;
+    text-align: center;
+    display: inline-block;
+    height: 20px;
+    padding: 4px 12px;
+    border: solid 1px;
+    border-color: #DCDCDC #DCDCDC #B3B3B3 #DCDCDC;
+    cursor: pointer; }
+  #append_parent .dialog_buttons_bar .dialog-bottom-btn {
+    border: none;
+    background: #EF262B;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    font-family: "Microsoft Yahei",Heiti, arial,helvetica,sans-serif !important; }
+
+/* 错误提示 */
 /* 底部 */
 .footer {
   background: #efefef;

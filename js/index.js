@@ -1,4 +1,21 @@
-define(['jquery'], function($){
+define(['jquery', 'jquery-cookie'], function($){
+    function token(){
+        if($.cookie('token')){
+            $('.header-login').html(`<a href="" class="user-account" id="user-account" style="margin-right: 10px;">${$.cookie('token')}</a><a href="" id="sso_logout">退出</a>`);
+            $('.tool-myCQ-infor-phone').html($.cookie('token'));
+            $('#sso_logout').click(function(ev){
+                $.cookie('token', null, {
+                    path: '/'
+                })
+            })
+        }else{
+            $('.header-login').html(`<a href="html/login.html">登录</a>
+            <span>|</span>
+            <a href="html/register.html">注册</a>`);
+            $('.tool-myCQ-infor-phone').html('您好请登录');
+        }
+        
+    }
     function header(){
         
         //头部登录 二维码 购物车 淡入淡出效果
@@ -434,6 +451,7 @@ define(['jquery'], function($){
         navTDownload: navTDownload,
         scrollTopR: scrollTopR,
         contentDownload: contentDownload,
-        fixedL: fixedL
+        fixedL: fixedL,
+        token: token
     }
 });

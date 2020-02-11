@@ -32,6 +32,9 @@ define(["jquery","jquery-cookie"], function($){
                         $('#accountTipsDiv2').html('');
                     }else if(obj.code == 0){
                         location.assign('../index.html');
+                        $.cookie('token', $('#phone1').val(), {
+                            path: '/'
+                        })
                     }else{
                         $('#accountTipsDiv1').html('');
                         $('#accountTipsDiv2').html(obj.message);
@@ -99,6 +102,9 @@ define(["jquery","jquery-cookie"], function($){
         //提交
         $('#login2').click(function(){
             if($('#accountTipsDiv3').html() == '√' && $('#accountTipsDiv4').html() == ''){
+                $.cookie('token', $('#p1').val(), {
+                    path: '/'
+                })
                 location.assign('../index.html');
                 $.cookie('phone', null);
             }else{

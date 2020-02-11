@@ -17,11 +17,13 @@ require.config({
 require(['index', 'shopping', 'detailed', 'settlement'], function(index, shopping, detailed, settlement){
 
     $(function(){
+        index.token();
         index.header();
         index.scrollTopR();
         detailed.sc_num();
         settlement.sc_msg();
         settlement.dataDownload();
+        settlement.btn();
         // settlement.all();
         console.log($.cookie('jinx'));
     })

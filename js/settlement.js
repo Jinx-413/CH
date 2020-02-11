@@ -1,4 +1,4 @@
-define(['detailed', 'jquery'], function(detailed, $){
+define(['detailed', 'jquery', 'jquery-cookie'], function(detailed, $){
     function sc_msg(){
         //购物车数据
         $.ajax({
@@ -283,11 +283,56 @@ define(['detailed', 'jquery'], function(detailed, $){
             $('#car_all_check').parent().removeClass('car-checked')
         }
     }
+    function btn(){
+        $('#next_submit2').click(function(){
+            if($.cookie('token')){
+                if($('#goods_num').html() == 0){
+                    $('#append_parent').html(`
+                    <div class="dialog_body" id="fwin_dialog" style="background: #fff;margin-top: -100px;position: fixed; z-index: 1701; left: 559.5px; top: 50%;" initialized="true">
+                <style type="text/css">object{visibility:hidden;}</style>
+                <h3 class="dialog_head" style="position: relative;z-index: auto;text-align: center;border: none;">
+                    <span class="dialog_title">
+                        <span class="dialog_title_icon">提示信息</span>
+                    </span>
+                    <span class="dialog_close_button" id="fwin_dialog_close" onclick="hideMenu('fwin_dialog', 'dialog')" title="关闭">X</span>
+                </h3>
+                <div class="eject_con">
+                    <div class="dialog_message_contents">
+                        <i class="alert_error"></i>
+                        请购买至少1件商品
+                    </div>
+                </div>
+                <div class="dialog_buttons_bar">
+                    <time class="countdown">
+                        <i class="icon-time"></i>
+                        2 秒后页面跳转
+                    </time>
+                </div>
+            </div>
+            <div id="fwin_dialog_cover" style="position: fixed; z-index: 1700; top: 0px; left: 0px; width: 100%; height: 1342px; opacity: 1; background-color: rgba(0, 0, 0, 0.6);;">
+            </div>`);
+                    setTimeout(function(){
+                        $('#append_parent').html("");
+                    }, 2000);
+                    $('#fwin_dialog_close').click(function(){
+                        $('#append_parent').html("");
+                    })
+                    
+                }else{
+                    alert('OK!结算成功，jinx爱你哦');
+                }
+            }else{
+                location.assign('login.html');
+            }
+        })
+    }
    
 
     return {
         dataDownload: dataDownload,
         sc_msg: sc_msg,
+        btn: btn
         // all: all
     }
 })
+

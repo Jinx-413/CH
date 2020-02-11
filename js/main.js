@@ -15,6 +15,7 @@ require.config({
 
 require(['index', 'detailed'], function(index, detailed){
     $(function(){
+        index.token();
         index.header();
         index.navDownload();
         index.nav();

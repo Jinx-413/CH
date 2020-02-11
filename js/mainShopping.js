@@ -16,6 +16,7 @@ require.config({
 require(['index', 'shopping', 'detailed'], function(index, shopping, detailed){
 
     $(function(){
+        index.token();
         index.header();
         index.scrollTopR();
         shopping.dataDownload();

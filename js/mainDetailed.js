@@ -22,6 +22,7 @@ require(['list', 'index', 'detailed'], function(list, index, detailed){
         $('.home-inner-edit').find('a').click(function(ev){
             ev.preventDefault();
         })
+        index.token();
         list.navDownload();
         index.nav();
         list.search();
