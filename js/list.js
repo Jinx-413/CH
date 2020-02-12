@@ -47,6 +47,10 @@ define(function(){
                     j++;
                 }
                 $('#div5').find('h1').html('');
+                $('#div5').find('.home-sub-box').eq(0).find('a').attr('href', 'http://cn.changhong.com/fw/cpbxfw/support.html');
+                $('#div5').find('.home-sub-box').eq(1).find('a').attr('href', 'http://cn.changhong.com/fw/azyqyfw/support.html');
+                $('#div5').find('.home-sub-box').eq(2).find('a').attr('href', 'http://cn.changhong.com/fw/cpbxfw/fwzc_2/201609/t20160922_55752.html');
+                $('#div5').find('.home-sub-box').eq(3).find('a').attr('href', 'http://cn.changhong.com/fw/cjwt/gzpc/');
                 
             },
             error: function(msg){
@@ -181,7 +185,7 @@ define(function(){
     function end(){
         //为你推荐选项卡操作
         //取消a标签默认样式
-        $('.pro-his-tj').find('a').click(function(ev){
+        $('.pro-his-tj-title').find('a').click(function(ev){
             ev.preventDefault();
         })
         $('.pro-his-tj').find('#end').on('click', 'a', function(){
