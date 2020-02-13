@@ -13,10 +13,10 @@ require.config({
     }
 })
 
-require(['index', 'shopping', 'detailed'], function(index, shopping, detailed){
+require(['index', 'shopping', 'detailed', 'list'], function(index, shopping, detailed, list){
 
     $(function(){
-        index.token();
+        list.token();
         index.header();
         index.scrollTopR();
         shopping.dataDownload();

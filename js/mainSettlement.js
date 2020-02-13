@@ -14,10 +14,10 @@ require.config({
     }
 })
 
-require(['index', 'shopping', 'detailed', 'settlement'], function(index, shopping, detailed, settlement){
+require(['index', 'shopping', 'detailed', 'settlement', 'list'], function(index, shopping, detailed, settlement, list){
 
     $(function(){
-        index.token();
+        list.token();
         index.header();
         index.scrollTopR();
         detailed.sc_num();

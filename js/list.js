@@ -1,4 +1,21 @@
 define(function(){
+    function token(){
+        if($.cookie('token')){
+            $('.header-login').html(`<a href="" class="user-account" id="user-account" style="margin-right: 10px;">${$.cookie('token')}</a><a href="" id="sso_logout">退出</a>`);
+            $('.tool-myCQ-infor-phone').html($.cookie('token'));
+            $('#sso_logout').click(function(ev){
+                $.cookie('token', null, {
+                    path: '/'
+                })
+            })
+        }else{
+            $('.header-login').html(`<a href="login.html">登录</a>
+            <span>|</span>
+            <a href="register.html">注册</a>`);
+            $('.tool-myCQ-infor-phone').html('您好请登录');
+        }
+        
+    }
     function navDownload(){
         //导航栏子菜单数据的获取和操作
         //获取数据
@@ -447,5 +464,6 @@ define(function(){
         listData:listData,
         dataDownload:dataDownload,
         shopping: shopping,
+        token: token,
     }
 })
